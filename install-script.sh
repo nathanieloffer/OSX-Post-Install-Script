@@ -18,28 +18,59 @@ fi
 PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
 
-binaries=(
-	coreutils
-	findutils
-	bash # Add to /etc/shells
-  fish # Add to /etc/shells
-	ffmpeg
-	htmldoc
-	htop-osx
-	imagemagick
+# Install Bash replacements
+bashshell=(
+  coreutils
+  findutils
+  bash # Add to /etc/shells
+)
+echo "installing bashshell…"
+brew install ${bashshell[@]}
+# Add Bash shell to /etc/shells file
+  echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
+
+# Install Fish shell
+fishshell=(
+  fish
+)
+echo "installing fishshell…"
+brew install ${fishshell[@]}
+# Add fish shell to /etc/shells file
+echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
+# Change default shell to Fish
+chsh -s /usr/local/bin/fish
+# Install Fisherman
+curl -sL get.fisherman.sh | fish
+
+muttmail=(
   msmtp
   mutt
   offlineimap
+  urlview
+  w3m
+)
+echo "installing muttmail…"
+brew install ${muttmail[@]}
+
+ircchat=(
+  aspell --with-lang-en_US
+  weechat --with-lua --with-perl --with-python --with-ruby --HEAD --with-aspell
+)
+echo "installing ircchat…"
+brew install ${ircchat[@]}
+
+binaries=(
+	ffmpeg
+  git
+	htmldoc
+	htop-osx
+	imagemagick
 	tmux
   tree
-  urlview
-  aspell --with-lang-en_US
   vim
-	weechat --with-aspell --with-perl --with-python
   wget
 	youtube-dl
-  )
-
+)
 echo "installing binaries..."
 brew install ${binaries[@]}
 
@@ -71,9 +102,7 @@ apps=(
 	firefox
   firefoxdeveloperedition
 	flux
-	github-desktop
 	google-chrome
-  google-chrome-canary
 	hazel
 	iterm2
   itsycal
@@ -93,8 +122,18 @@ apps=(
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
 
-echo "installing apps..."
+echo "installing apps…"
 brew cask install --appdir="/Applications" ${apps[@]}
+
+# Quicklook plugins
+qlplugins=(
+  betterzipql
+  qlstephen
+  suspicious-package
+)
+
+echo "installing qlplugins…"
+brew cask install --appdir="/Applications" ${qlplugins[@]}
 
 #
 #Install Fonts
