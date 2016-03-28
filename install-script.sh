@@ -5,8 +5,6 @@
 # Install xcode command line tools
 xcode-select --install
 #
-# Install Brew Packages
-#
 # Check for Homebrew,
 # Install if we don't have it
 
@@ -22,7 +20,7 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
 bashshell=(
   coreutils
   findutils
-  bash # Add to /etc/shells
+  bash
 )
 echo "installing bashshell…"
 brew install ${bashshell[@]}
@@ -39,6 +37,7 @@ brew install ${fishshell[@]}
 echo "/usr/local/bin/fish" | sudo tee -a /etc/shells
 # Change default shell to Fish
 chsh -s /usr/local/bin/fish
+
 # Install Fisherman
 curl -sL get.fisherman.sh | fish
 
@@ -71,51 +70,47 @@ binaries=(
   wget
 	youtube-dl
 )
-echo "installing binaries..."
+echo "installing binaries…"
 brew install ${binaries[@]}
 
+echo "Tapping a few casks…"
 brew tap homebrew/dupes
 brew tap homebrew/x11
 brew tap homebrew/versions
-
-# xclip can't be installed before xquartz
-# brew install homebrew/x11/xclip
-
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/nano --disable-nls --enable-color --enable-extra --enable-multibuffer --enable-nanorc --enable-utf8
-
 brew install caskroom/cask/brew-cask
 
-# Don't understand why this isn't found.
-# brew cask install google-chrome-canary
-
 apps=(
-	1password
-	alfred
-	alternote
-	atom
-	bartender
-	brackets
-	cleanmymac
-	daisydisk
-	dropbox
-	firefox
-  firefoxdeveloperedition
-	flux
-	google-chrome
-	hazel
-	iterm2
+  1password
+  alfred
+  alternote
+  atom
+  bartender
+  bettertouchtool
+  cheatsheet
+  cleanmymac
+  daisydisk
+  dropbox
+  dropzone
+  firefox
+  flux
+  google-chrome
+  hazel
+  iterm2
   itsycal
-	keka
+  keka
+  mamp
   moom
-	nvalt
-	omnifocus
-	seil
-	slack
-	textexpander
-	transmission
-	vlc
-	xquartz
+  nvalt
+  omnifocus
+  seil
+  slack
+  textexpander
+  transmission
+  typora
+  vlc
+  xquartz
   xclip
   )
 
@@ -132,7 +127,7 @@ qlplugins=(
   suspicious-package
 )
 
-echo "installing qlplugins…"
+echo "installing Quick look plugins…"
 brew cask install --appdir="/Applications" ${qlplugins[@]}
 
 #
