@@ -82,35 +82,35 @@ brew install homebrew/dupes/nano --disable-nls --enable-color --enable-extra --e
 brew install caskroom/cask/brew-cask
 
 apps=(
-	1password
-	alfred
-	alternote
-	atom
-	bartender
+  1password
+  alfred
+  alternote
+  atom
+  bartender
   bettertouchtool
   cheatsheet
-	cleanmymac
-	daisydisk
-	dropbox
+  cleanmymac
+  daisydisk
+  dropbox
   dropzone
-	firefox
-	flux
-	google-chrome
-	hazel
-	iterm2
+  firefox
+  flux
+  google-chrome
+  hazel
+  iterm2
   itsycal
-	keka
+  keka
   mamp
   moom
-	nvalt
-	omnifocus
-	seil
-	slack
-	textexpander
-	transmission
+  nvalt
+  omnifocus
+  seil
+  slack
+  textexpander
+  transmission
   typora
-	vlc
-	xquartz
+  vlc
+  xquartz
   xclip
   )
 
