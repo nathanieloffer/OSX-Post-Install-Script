@@ -25,7 +25,7 @@ bashshell=(
 echo "installing bashshell…"
 brew install ${bashshell[@]}
 # Add Bash shell to /etc/shells file
-  echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
+echo "/usr/local/bin/bash" | sudo tee -a /etc/shells
 
 # Install Fish shell
 fishshell=(
@@ -59,16 +59,16 @@ echo "installing ircchat…"
 brew install ${ircchat[@]}
 
 binaries=(
-	ffmpeg
+  ffmpeg
   git
-	htmldoc
-	htop-osx
-	imagemagick
-	tmux
+  htmldoc
+  htop-osx
+  imagemagick
+  tmux
   tree
   vim
   wget
-	youtube-dl
+  youtube-dl
 )
 echo "installing binaries…"
 brew install ${binaries[@]}
@@ -96,16 +96,16 @@ apps=(
   firefox
   flux
   google-chrome
-  hazel
+  hazel ## No longer using
   iterm2
   itsycal
-  keka
+  keka ## Error on install
   mamp
   moom
-  nvalt
+  nvalt ## No longer using
   omnifocus
   seil
-  slack
+  slack ## Using google-chrome version might remove this version 
   textexpander
   transmission
   typora
