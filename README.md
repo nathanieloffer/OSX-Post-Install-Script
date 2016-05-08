@@ -1,3 +1,7 @@
 # osx-post-install-script
 
-The basic intention with this script is to automate all or at least as many as possible of the individual steps it takes to install all those utilities and applications that I want after doing a fresh install of Mac OS X.
+*Setup script for OS X El Capitan.*
+
+When run it installs command line programs and applications intended to bring the system up to speed in a fraction of the usual time required.
+
+Running these scripts without proper understanding of what they do is strongly discouraged. No responsibility taken if you bork your system.
