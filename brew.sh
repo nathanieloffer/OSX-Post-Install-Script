@@ -54,3 +54,9 @@ chsh -s /usr/local/bin/fish
 
 # Install Fisherman
 curl -sL get.fisherman.sh | fish
+
+#
+#Cleanup After Install
+#
+
+brew cleanup
