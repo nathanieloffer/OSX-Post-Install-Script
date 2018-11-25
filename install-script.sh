@@ -60,7 +60,7 @@ brew install ${ircchat[@]}
 
 binaries=(
 	ffmpeg
-  git
+    git
 	htmldoc
 	htop-osx
 	imagemagick
