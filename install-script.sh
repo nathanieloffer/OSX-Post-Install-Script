@@ -65,9 +65,9 @@ binaries=(
 	htop-osx
 	imagemagick
 	tmux
-  tree
-  vim
-  wget
+    tree
+    vim
+    wget
 	youtube-dl
 )
 echo "installing binaries…"
