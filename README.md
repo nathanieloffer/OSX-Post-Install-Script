@@ -1,4 +1,4 @@
-# osx-post-install-script
+OSX-Post-Install-Script
 
 *Setup script for OS X El Capitan.*
 
